@@ -2,3 +2,24 @@
 
 /* Discreet website branding overlays conceal supplier corner marks on reference material. */
 .image-supplier-mask{pointer-events:none;display:block;position:absolute;top:0;left:0;z-index:3;padding:9px 14px;min-width:104px;text-align:left;font-size:9px;letter-spacing:.12em;color:#fff;font-weight:800;background:#0d1b2be8;border-bottom-right-radius:5px}.gallery-item .image-supplier-mask{top:0;left:0}.image-supplier-mask.both-mask:after{content:' ';position:fixed;display:none}
+
+/* October 2026 portfolio refinements: full-frame images, correct category allocation */
+
+.casino-hero{background:#0c1d2d}
+.casino-hero .product-hero-bg{background-color:#0c1d2d;background-size:auto 100%;background-position:right center;background-repeat:no-repeat}
+.casino-hero:after{background:linear-gradient(90deg,#071727 0%,#071727f2 23%,#071727ae 49%,#07172720 81%),linear-gradient(0deg,#07172732,transparent 42%)}
+.casino-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.casino-card{border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 5px 24px #111d2a09}
+.casino-card .casino-photo{display:block;width:100%;border:0;border-radius:0;background:#111e2b;padding:0;text-align:left;position:relative;cursor:zoom-in}
+.casino-card .casino-photo img{width:100%;height:210px;object-fit:contain;background:#111e2b;transition:none}
+.casino-card .casino-photo:hover img{transform:none}
+.casino-card>div{padding:16px 17px 19px}
+.casino-card h3{font-size:15px;line-height:1.4;margin-bottom:6px;letter-spacing:-.02em}
+.casino-card p{font-size:12px;line-height:1.5}
+.gallery-item img{object-fit:contain;background:#edf1f3}
+.gallery-item:hover img{transform:none}
+.product-hero:has(+ .product-body) .product-hero-bg{background-position:center center}
+@media(min-width:761px){.product-hero:has(+ .product-body) .product-hero-bg{background-size:cover}}
+@media(max-width:1120px){.casino-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){.casino-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.casino-card .casino-photo img{height:200px}.casino-hero .product-hero-bg{background-size:auto 80%;background-position:right bottom}}
+@media(max-width:520px){.casino-grid{grid-template-columns:1fr}.casino-card .casino-photo img{height:255px}.casino-hero .product-hero-bg{background-size:auto 70%;background-position:center bottom}.casino-hero:after{background:linear-gradient(180deg,#071727ef 0%,#071727d9 45%,#07172740 100%)}}
