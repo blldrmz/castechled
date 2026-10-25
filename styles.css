@@ -23,3 +23,79 @@
 @media(max-width:1120px){.casino-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:800px){.casino-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.casino-card .casino-photo img{height:200px}.casino-hero .product-hero-bg{background-size:auto 80%;background-position:right bottom}}
 @media(max-width:520px){.casino-grid{grid-template-columns:1fr}.casino-card .casino-photo img{height:255px}.casino-hero .product-hero-bg{background-size:auto 70%;background-position:center bottom}.casino-hero:after{background:linear-gradient(180deg,#071727ef 0%,#071727d9 45%,#07172740 100%)}}
+
+/* OCT 25: full-framed project imagery, editorial casino layout, hardware gallery */
+.hero-slide:before,.hero-slide.is-active:before{
+ background-image:linear-gradient(90deg,#071626 0%,#071626ee 21%,#071626b0 42%,#07162626 74%,#07162600 100%),linear-gradient(0deg,#0716265c,transparent 29%),var(--hero-image);
+ background-size:100% 100%,100% 100%,auto 100%;
+ background-position:center,center,right center;
+ background-repeat:no-repeat;
+ transform:none;
+ transition:opacity .45s ease;
+}
+.hero{background:#071626}
+.hero-slide{background:#071626}
+.hero-overlay h1{max-width:650px}
+.casino-hero{height:600px;min-height:600px;background:#071626;overflow:hidden;position:relative}
+.casino-hero-gallery{position:absolute;inset:0 0 0 auto;width:min(57%,945px);display:flex;gap:11px;padding:28px 22px 25px 0;z-index:0}
+.casino-hero-gallery img{height:100%;width:calc((100% - 22px)/3);min-width:0;object-fit:contain;object-position:center;background:#14283a;border-radius:6px}
+.casino-hero:after{position:absolute;inset:0;content:"";z-index:1;pointer-events:none;background:linear-gradient(90deg,#071626 0%,#071626 24%,#071626eb 36%,#07162680 47%,transparent 62%)}
+.casino-hero .product-hero-content{z-index:2;position:relative;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:74px;padding-bottom:46px}
+.casino-hero .product-hero-content h1{max-width:600px;font-size:clamp(3.5rem,5.3vw,6.1rem);line-height:1.07}
+.casino-hero .product-hero-content>p:not(.eyebrow){max-width:470px}
+.casino-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:23px}
+.casino-card{border:1px solid #e6eaee;border-radius:10px;overflow:hidden;background:white;box-shadow:0 10px 26px rgba(10,25,38,.045)}
+.casino-card .casino-photo{position:relative;width:100%;display:block;height:460px;overflow:hidden;background:linear-gradient(140deg,#1b3145,#091827);padding:12px;border:0;border-radius:0}
+.casino-card .casino-photo img{width:100%;height:100%;object-fit:contain;object-position:center;border-radius:3px;background:transparent;transition:none}
+.casino-card .casino-photo:hover img{transform:none}
+.casino-card .casino-card-copy{min-height:107px;padding:17px 21px 22px}
+.casino-card h3{font-size:16px;font-weight:800;line-height:1.45;margin:0 0 6px}
+.casino-card p{font-size:12px;line-height:1.55}
+.hardware-hero{background:radial-gradient(circle at 84% 54%,#244457 0,#102537 44%,#081727 80%);overflow:hidden}
+.hardware-hero-inner{display:grid;grid-template-columns:1.1fr .9fr;min-height:540px;align-items:center;gap:30px}
+.hardware-hero-copy{padding:110px 0 55px}
+.hardware-hero h1{font-size:clamp(3.4rem,5.8vw,6.3rem);margin:18px 0 22px;line-height:1.03;color:#fff;letter-spacing:-.065em}
+.hardware-hero h1 em{font-style:normal;color:var(--gold)}
+.hardware-hero p:not(.eyebrow){max-width:580px;color:#d2dfe8;font-size:17px;line-height:1.65;margin-bottom:27px}
+.hardware-hero-inner>img{width:100%;max-height:440px;object-fit:contain;mix-blend-mode:screen}
+.hardware-section{padding-bottom:95px}
+.hardware-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.hardware-card{border:1px solid #e0e7ed;border-radius:9px;overflow:hidden;background:#fff;box-shadow:0 10px 32px #11283b0a}
+.hardware-card .gallery-item{border:0;background:#e9eff2;border-radius:0;width:100%;height:300px;overflow:hidden}
+.hardware-card .gallery-item img{width:100%;height:100%;object-fit:contain;padding:18px;transition:none}
+.hardware-card .gallery-item:hover img{transform:none}
+.hardware-card>div{padding:21px 24px 25px}
+.hardware-card small{font-size:10px;font-weight:800;letter-spacing:.16em;color:#b07e4e}
+.hardware-card h3{font-size:21px;margin:9px 0;color:#12263a}
+.hardware-card p{font-size:13px;line-height:1.7;color:#536574;margin:0;max-width:480px}
+.hardware-components{background:#0b1d2d;color:#fff;padding-top:84px;padding-bottom:90px}
+.hardware-components .section-intro h2{color:#fff}.hardware-components .section-intro h2 span{color:#dcb073}
+.hardware-components .intro-right{color:#c8d6df}
+.hardware-component-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.hardware-component-grid article{border:1px solid #385167;background:#122b3e;border-radius:8px;padding:25px 22px;min-height:177px}
+.hardware-component-grid article span{color:#dcb073;font-size:12px;letter-spacing:.15em;font-weight:800}
+.hardware-component-grid h3{font-size:17px;line-height:1.35;margin:15px 0 9px;color:white}
+.hardware-component-grid p{font-size:12px;line-height:1.7;color:#c4d2dc;margin:0}
+.hardware-footer{margin-top:32px;border-top:1px solid #385167;padding-top:30px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.hardware-footer p{max-width:630px;color:#cad5df;font-size:13px;line-height:1.7}
+@media(max-width:1160px){.casino-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.casino-card .casino-photo{height:510px}.casino-hero-gallery{width:56%}.hardware-component-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .hero-slide:before,.hero-slide.is-active:before{background-image:linear-gradient(180deg,#071626e0 0%,#071626c0 25%,#07162622 62%,#07162640 100%),var(--hero-image);background-size:100% 100%,auto 75%;background-position:center,right bottom;background-repeat:no-repeat}
+ .casino-hero{min-height:720px;height:720px}
+ .casino-hero-gallery{top:auto;bottom:0;left:0;right:0;height:320px;width:100%;gap:7px;padding:0 12px 20px}
+ .casino-hero-gallery img{width:calc((100% - 14px)/3);border-radius:4px}
+ .casino-hero:after{background:linear-gradient(180deg,#071626 0%,#071626ed 31%,#07162666 57%,transparent 85%)}
+ .casino-hero .product-hero-content{min-height:720px;justify-content:flex-start;padding-top:112px;padding-bottom:315px}
+ .casino-hero .product-hero-content h1{font-size:clamp(2.6rem,10.5vw,4.2rem)}
+ .casino-grid{grid-template-columns:1fr;gap:20px}
+ .casino-card .casino-photo{height:430px}
+ .hardware-hero-inner{grid-template-columns:1fr;min-height:0;gap:0}
+ .hardware-hero-copy{padding:125px 0 12px}
+ .hardware-hero h1{font-size:clamp(3.1rem,11vw,5rem)}
+ .hardware-hero-inner>img{max-height:280px;width:100%;margin:0 auto 22px}
+ .hardware-showcase{grid-template-columns:1fr;gap:18px}
+ .hardware-card .gallery-item{height:245px}
+ .hardware-component-grid{grid-template-columns:1fr;gap:12px}
+ .hardware-footer{flex-direction:column;align-items:flex-start}
+}
+@media(min-width:761px) and (max-width:1030px){.casino-hero-gallery{width:50%;opacity:.85}.casino-card .casino-photo{height:470px}.hardware-hero-inner{grid-template-columns:1fr .75fr}}
