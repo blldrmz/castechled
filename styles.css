@@ -106,3 +106,5 @@
 /* Homepage hero: approved three-photo zoom-out set, 26 October 2026. */
 .hero-slide::before,.hero-slide.is-active::before{background-size:100% 100%,100% 100%,var(--hero-photo-size,cover)!important;background-position:center,center,center center!important;background-repeat:no-repeat!important;background-color:#071626!important}
 @media(max-width:760px){.hero-slide::before,.hero-slide.is-active::before{background-size:100% 100%,100% 100%,cover!important}}
+
+.quote-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}.quote-form .consent{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:12.5px;line-height:1.5;color:#4d5a67}.quote-form .consent input{width:auto;margin:3px 0 0;flex-shrink:0}.quote-form .consent a{color:#ad7135;text-decoration:underline}.form-status{min-height:1.4em;margin:12px 0 0;font-size:13px;font-weight:700;color:#0b3047}.legal-body{max-width:820px}.legal-body h2{font-size:1.5rem;margin:38px 0 10px}.legal-body p,.legal-body li{font-size:15px;line-height:1.8;color:#4d5a67}.legal-body a{color:#ad7135;text-decoration:underline}.footer-last a{color:var(--gold)}
