@@ -1,0 +1,5 @@
+Contact: mailto:sales@virexa-tech.com
+Expires: 2027-10-28T00:00:00.000Z
+Preferred-Languages: en, tr
+Canonical: https://castechled.com/.well-known/security.txt
+Policy: https://castechled.com/privacy.html
