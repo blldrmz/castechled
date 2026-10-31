@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 LANGS = ["cs", "de", "ru"]
 LANG_NAMES = {"en": "English", "cs": "Čeština", "de": "Deutsch", "ru": "Русский"}
-SKIP_PAGES = {"applications.html", "privacy.html", "terms.html"}
+SKIP_PAGES = {"privacy.html", "terms.html"}
 ATTRS = ("alt", "title", "aria-label", "placeholder", "data-caption")
 
 def pages():
