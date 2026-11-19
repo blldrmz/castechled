@@ -3,8 +3,8 @@ import glob, html, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-LANGS = ["cs", "de", "ru"]
-LANG_NAMES = {"en": "English", "cs": "Čeština", "de": "Deutsch", "ru": "Русский"}
+LANGS = ["cs", "de", "fr", "ru"]
+LANG_NAMES = {"en": "English", "cs": "Čeština", "de": "Deutsch", "fr": "Français", "ru": "Русский"}
 SKIP_PAGES = {"privacy.html", "terms.html"}
 ATTRS = ("alt", "title", "aria-label", "placeholder", "data-caption")
 
