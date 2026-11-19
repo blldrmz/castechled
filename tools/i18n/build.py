@@ -62,10 +62,24 @@ def nav_block(lang, page):
     )
 
 
+def redirect_script():
+    """English home only: send first-time visitors to their browser language; a choice made in the
+    language menu (saved by script.js) wins. Crawlers are never redirected."""
+    langs = ",".join(f'"{l}"' for l in ACTIVE)
+    return ("<script>(function(){try{var L=[%s],s=localStorage.getItem('lang');"
+            "if(/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent))return;"
+            "if(s){if(L.indexOf(s)>-1)location.replace('/'+s+'/');return}"
+            "var a=navigator.languages||[navigator.language];for(var i=0;i<a.length;i++){var c=String(a[i]).slice(0,2).toLowerCase();"
+            "if(c==='en')return;if(L.indexOf(c)>-1){location.replace('/'+c+'/');return}}}catch(e){}})();</script>") % langs
+
+
 def add_i18n_blocks(src, lang, page):
     src = I18N_HEAD.sub("", src)
     src = I18N_NAV.sub("", src)
-    src = re.sub(r'(<link rel="canonical" href="[^"]*">)', lambda m: m.group(1) + head_block(page), src, count=1)
+    head = head_block(page)
+    if lang == "en" and page == "index.html":
+        head = head.replace("<!--/i18n-head-->", redirect_script() + "<!--/i18n-head-->")
+    src = re.sub(r'(<link rel="canonical" href="[^"]*">)', lambda m: m.group(1) + head, src, count=1)
     # language menu goes at the end of the main navigation
     src = re.sub(r'(<nav id="site-nav"[^>]*>.*?)(</nav>)', lambda m: m.group(1) + nav_block(lang, page) + m.group(2), src, count=1, flags=re.S)
     return src
