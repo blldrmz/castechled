@@ -1,0 +1,24 @@
+name: Notify search engines (IndexNow)
+
+# After each deploy, send every URL in the sitemap to IndexNow (Bing, Yandex, Seznam, Naver).
+on:
+  page_build:
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for the new version to be live
+        run: |
+          for i in $(seq 1 30); do
+            curl -fsS "https://castechled.com/82edcfcc17c51b4c8bebd23496af06f8.txt" | grep -q "82edcfcc17c51b4c8bebd23496af06f8" && exit 0
+            sleep 20
+          done
+          echo "Key file not live yet" && exit 1
+      - name: Submit sitemap URLs
+        run: |
+          urls=$(curl -fsS "https://castechled.com/sitemap.xml" | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' | sort -u | jq -R . | jq -s -c .)
+          echo "Submitting $(echo "$urls" | jq length) URLs"
+          jq -n --argjson u "$urls" '{host:"castechled.com",key:"82edcfcc17c51b4c8bebd23496af06f8",keyLocation:"https://castechled.com/82edcfcc17c51b4c8bebd23496af06f8.txt",urlList:$u}' \
+            | curl -sS -w "\nHTTP %{http_code}\n" -H "Content-Type: application/json; charset=utf-8" -d @- https://api.indexnow.org/indexnow
