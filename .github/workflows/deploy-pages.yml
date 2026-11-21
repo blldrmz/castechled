@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      # Publish only website files. Repo notes, tooling and CI config stay out of the live site.
+      - name: Collect site files
+        run: |
+          mkdir -p _site
+          git ls-files -z \
+            | grep -zvE '^\.github/|^tools/|^scripts/|(^|/)__pycache__/|\.(md|py|pyc)$|^\.gitignore$' \
+            | xargs -0 cp --parents -t _site
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3  # v3 keeps .well-known/ (v4 drops dotfiles)
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
