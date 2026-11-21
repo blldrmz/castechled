@@ -1,4 +1,4 @@
-# CLAUDE.md — castechled.com (CasTech LED)
+# CLAUDE.md — castechled.com (CasTechLED)
 
 LED screen website for **CasTechLED by Virexa**. Owner: Bilal Durmaz. He talks to you in Turkish or English. The site is in English, with Czech, German and Russian versions.
 
@@ -15,7 +15,7 @@ LED screen website for **CasTechLED by Virexa**. Owner: Bilal Durmaz. He talks t
 - Every page carries its own copy of the header, nav, footer and JSON-LD. A change to shared parts must be made in **every English page** (`*.html` and `products/*.html`), then the translations rebuilt (see below).
 - `CNAME` (castechled.com), `.nojekyll`, `.well-known/security.txt`, `robots.txt`: do not touch.
 - Font: **Inter**, self-hosted in `assets/fonts/` (same as virexa-tech.com). No other fonts, no Google Fonts link.
-- Forms (`quote.html`, `contact.html`) post to FormSubmit → `sales@virexa-tech.com`. Never change the recipient. Public contact email is `info@castechled.com`. **Never use castecheq.com addresses on this site.**
+- Forms (`quote.html`, `contact.html`) post to FormSubmit → `info@castechled.com`. Never change the recipient. Use only `info@castechled.com` on this site, never `sales@virexa-tech.com`. **Never use castecheq.com addresses on this site.**
 
 Preview locally: `python3 -m http.server` in the repo root (links are root-absolute, so open via the server, not as files).
 
