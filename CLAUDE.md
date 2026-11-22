@@ -17,6 +17,8 @@ LED screen website for **CasTechLED by Virexa**. Owner: Bilal Durmaz. He talks t
 - Font: **Inter**, self-hosted in `assets/fonts/` (same as virexa-tech.com). No other fonts, no Google Fonts link.
 - Forms (`quote.html`, `contact.html`) post to FormSubmit → `info@castechled.com`. Never change the recipient. Use only `info@castechled.com` on this site, never `sales@virexa-tech.com`. **Never use castecheq.com addresses on this site.**
 
+- Google Ads conversion tracking: `ADS={id,label}` at the end of `script.js`. Empty id = tracking and cookie banner off. The tag loads only after the visitor accepts the cookie banner; `privacy.html` describes this. Never load Google tags without consent.
+
 Preview locally: `python3 -m http.server` in the repo root (links are root-absolute, so open via the server, not as files).
 
 ## Translations (`/cs/`, `/de/`, `/ru/`)
